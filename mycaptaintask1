@@ -1,0 +1,12 @@
+#To print area of a circle
+r=float(input("Enter the radius of a circle  "))
+pi=3.14
+A=pi*r*r
+print("Area of circle is ", A)
+
+
+
+#To print file extension
+fin=input("Enter a file name : ")
+f=fin.split(".")
+print("The extension of file:", f[-1])
