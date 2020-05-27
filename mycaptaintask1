@@ -1,12 +1,25 @@
+#TASK 1
 #To print area of a circle
 r=float(input("Enter the radius of a circle  "))
 pi=3.14
 A=pi*r*r
 print("Area of circle is ", A)
 
+#OUTPUT SCREEN
+Enter the radius of a circle  3
+Area of circle is  28.259999999999998
 
 
+
+
+
+#TASK 2
 #To print file extension
 fin=input("Enter a file name : ")
 f=fin.split(".")
 print("The extension of file:", f[-1])
+
+
+#OUTPUT SCREEN
+Enter a file name : myschool.java
+The extension of file: java
