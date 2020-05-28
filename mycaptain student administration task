@@ -1,0 +1,70 @@
+#Student Administration Program
+import csv 
+
+condition=True
+
+def seek_info(condition):                                     #Function to seek details
+    student_num=0
+    while(condition):
+        print("Enter Student Details as (NAME AGE NUMBER MARKS)")
+        info_student=input("Enter Student Information ")
+        
+        detail_student=info_student.split(' ')
+        print("Student information Name, Age, Number, Marks are : " +str(detail_student))
+      
+       
+        choice=input("Is this information accurate? (yes or no) ")
+        
+        
+        if choice=='yes':
+            store_info(detail_student)                                  #Calling write function after every new informatiion
+            student_num+=1
+            check=input("Press yes to continue and any other key to stop ")
+            if(check== 'yes'):                                           #Condition change
+                condition=True
+            else:
+                condition=False
+                                                                        #Break loop
+                
+        elif choice=='no':
+            print("Enter correct values")
+            
+            
+            
+def store_info(info):                                                #Function to write in csv file with parameter
+    with open('Student_Details.csv','a', newline='') as csv_file:
+        writer=csv.writer(csv_file)
+        if (csv_file.tell==0):
+            writer.writerow(["NAME", "AGE", "NUMBER", "MARKS"])
+       
+        writer.writerow(info)                                            #Writing to file
+ 
+            
+seek_info(True)                                           #Function call
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+#OUTPUT SCREEN
+
+Enter Student Details as (NAME AGE NUMBER MARKS)
+Enter Student Information Ram 22 8756738 88
+Student information Name, Age, Number, Marks are : ['Ram', '22', '8756738', '88']
+Is this information accurate? (yes or no) yes
+Press yes to continue and any other key to stop yes
+Enter Student Details as (NAME AGE NUMBER MARKS)
+Enter Student Information Rahul 21 97466378 100
+Student information Name, Age, Number, Marks are : ['Rahul', '21', '97466378', '100']
+Is this information accurate? (yes or no) no
+Enter correct values
+Enter Student Details as (NAME AGE NUMBER MARKS)
+Enter Student Information Rita 22 874683 99
+Student information Name, Age, Number, Marks are : ['Rita', '22', '874683', '99']
+Is this information accurate? (yes or no) yes
+Press yes to continue and any other key to stop n
